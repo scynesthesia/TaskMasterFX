@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tasksystem.TaskController">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <spacing>10</spacing>
+
+    <HBox spacing="10">
+        <TextField fx:id="descriptionField" promptText="Task Description" HBox.hgrow="ALWAYS"/>
+        <DatePicker fx:id="dueDatePicker" promptText="Due Date"/>
+        <ComboBox fx:id="priorityComboBox" promptText="Priority"/>
+        <Button text="Add Task" onAction="#handleAddTask"/>
+    </HBox>
+
+    <ListView fx:id="taskListView" VBox.vgrow="ALWAYS"/>
+
+    <HBox spacing="10">
+        <CheckBox fx:id="completedCheckBox" text="Mark as Completed"/>
+        <Button text="Export to PDF" onAction="#handleExportPDF"/>
+    </HBox>
+</VBox>
